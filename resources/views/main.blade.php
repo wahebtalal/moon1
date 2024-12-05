@@ -34,8 +34,9 @@
         <title>Moon1 | موون1 </title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="/storage/css/style.css" />
+{{--        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />--}}
+{{--        <link rel="stylesheet" href="/storage/css/style.css" />--}}
+        @vite(['resources/js/app.js','resources/css/app.css'])
         <style>
             @font-face {
                 font-family: Noor;
@@ -71,6 +72,6 @@
 
 
      <x-footer/>
-        <script src="/js/script.js"></script>
+{{--        <script src="/js/script.js"></script>--}}
     </body>
 </html>
