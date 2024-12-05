@@ -33,6 +33,7 @@ protected static ?string $slug='/';
         return [
             Tabs::make('Settings')
                 ->persistTab()
+                ->id('settings-tabs')
                 ->schema([
 
 
@@ -144,6 +145,9 @@ protected static ?string $slug='/';
                         ->label('التذييل')
                         ->schema([
                             TextInput::make('ftitle')->label('النص تحت الشعار'),
+                            FileUpload::make('fbackground')
+                                ->required()
+                                ->label('خلفية التذييل'),
                             Repeater::make('links')
                                 ->label('روابط التذييل')
 
@@ -164,6 +168,7 @@ protected static ?string $slug='/';
                     Tabs\Tab::make('seo')
                         ->label('Seo')
                         ->schema([
+
 
 
                             TextInput::make('seo.description')

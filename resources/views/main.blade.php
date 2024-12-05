@@ -5,6 +5,13 @@
 
             $meta=setting('seo');
         @endphp
+        <link rel="icon" type="image/png" href="/storage/assets/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/storage/assets/favicon.svg" />
+        <link rel="shortcut icon" href="/storage/assets/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/storage/assets/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Moon1" />
+        <link rel="manifest" href="/storage/assets/site.webmanifest" />
+
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8">
@@ -24,7 +31,7 @@
         <meta name="twitter:title" content="{{ $meta['twitter_title'] }}">
         <meta name="twitter:description" content="{{ $meta['twitter_description'] }}">
         <meta name="twitter:image" content="{{ $meta['twitter_image'] }}">
-        <title>Moon1</title>
+        <title>Moon1 | موون1 </title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />

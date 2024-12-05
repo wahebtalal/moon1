@@ -211,6 +211,14 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2024-12-05 19:46:28',
                 'updated_at' => '2024-12-05 19:46:28',
             ),
+            24 => 
+            array (
+                'id' => 25,
+                'key' => 'fbackground',
+                'value' => '"01JECD41XABRAT9KN2Y8AXV4X2.png"',
+                'created_at' => '2024-12-05 21:55:24',
+                'updated_at' => '2024-12-05 21:55:24',
+            ),
         ));
         
         
