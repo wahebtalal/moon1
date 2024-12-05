@@ -10,7 +10,7 @@
             </div>
             <div class="lg:w-1/4 flex lg:justify-end items-end mt-12 lg:mt-0">
                 @foreach(setting('links') as $item)
-                    <div class="bg-white p-2 rounded-full mr-2.5">
+                    <div class=" p-2 rounded-full mr-2.5">
                         <a href="{{$item['url']}}" target="_blank">
                             <img src="/storage/{{$item['icon']}}"  />
 

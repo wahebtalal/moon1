@@ -16,7 +16,8 @@ class Settings extends BaseSettings
 {
 
     protected static ?string $title = 'البيانات';
-
+protected static ?string $slug='/';
+//protected static bool $shouldRegisterNavigation=false;
     public static function getNavigationLabel(): string
     {
         return 'البيانات';
@@ -131,7 +132,8 @@ class Settings extends BaseSettings
                                     TextInput::make('goal')
                                         ->label('الهدف')
                                         ->required(),
-
+                                    FileUpload::make('icon')
+                                        ->label('الايقونة'),
 
 
                                 ]),
@@ -149,7 +151,8 @@ class Settings extends BaseSettings
                                     TextInput::make('url')
                                         ->label('الرابط')
                                         ->required(),
-                                    FileUpload::make('icon'),
+                                    FileUpload::make('icon')
+                                    ->label('الايقونة'),
 
 
 

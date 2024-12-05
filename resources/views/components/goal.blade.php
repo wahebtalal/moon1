@@ -9,7 +9,7 @@
                 <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
                  @foreach(setting('goal') as $item)
                         <div class="flex  items-center justify-center">
-                            <img class="w-8 " src="https://cdn.tuk.dev/assets/templates/weCare/quotation.png" alt="quotation" />
+                            <img class="w-8 " src="/storage/{{$item['icon']}}" alt="quotation" />
                             <p class="text-base custom-gray-800 leading-7 mt-5 text-center w-8/12">{{$item['goal']}}</p>
                         </div>
                  @endforeach
