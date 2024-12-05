@@ -38,6 +38,7 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Pages\Dashboard::class,
             ])
+            ->profile()
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
@@ -60,7 +61,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogo(asset('assets/logo.png'))
             ->brandLogoHeight('3rem')
         ->plugins([
-                FilamentFabricatorPlugin::make(),
+//                FilamentFabricatorPlugin::make(),
                 FilamentSettingsPlugin::make()
                 ->pages([
                     Settings::class
