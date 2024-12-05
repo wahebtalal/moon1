@@ -1,8 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.f-m-m {
-    font-family: "Montserrat", sans-serif;
+
+    @font-face {
+        font-family: Noor;
+        font-weight: 400;
+        src: url(../font/AGCRegular.ttf) format("truetype");
+    }
+    @font-face {
+        font-family: Noor;
+        font-weight: 500;
+        src: url(../font/AGCRegular.ttf) format("truetype");
+    }
+
+* {
+    font-family: "Noor", serif;
 }
 .f-m-w {
     font-family: "Merriweather", serif;

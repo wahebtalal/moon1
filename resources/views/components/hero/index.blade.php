@@ -1,11 +1,11 @@
-<div class="relative h-screen">
-    <img src="https://images.pexels.com/photos/1144176/pexels-photo-1144176.jpeg?w=1920&h=900&fit=crop" class="absolute xl:h-screen h-full w-full" />
+<div class="relative h-screen bg-black/50">
+    <img src="{{ asset(setting('main.background')) }}" class="absolute xl:h-screen h-full w-full" />
     <img src="/images/Vector 1.png" class="absolute right-0 top-0" />
-    <div class="container mx-auto relative h-full pt-16">
+    <div class="container mx-auto relative h-full pt-16 ">
         <!-- Navbar -->
         <div class="top-0 absolute w-full items-center justify-between flex px-6 py-4">
             <div class="lg:w-1/5">
-                <img src="/images/logo.png" />
+                <img src="{{asset('assets/logo.png')}}" />
             </div>
             <div class="lg:w-4/5 flex items-center justify-end">
                 <ul class="hidden xl:flex f-m-m">

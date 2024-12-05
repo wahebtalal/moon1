@@ -1,7 +1,6 @@
 <div class="h-full flex flex-col justify-center">
     <h1 class="font-bold text-white md:leading-relaxed lg:leading-relaxed text-center md:text-7xl text-4xl mt-10 md:pt-12 f-m-m uppercase">
-        Never Stop<br />
-        Exploring The world
+     {{setting('main.title')}}
     </h1>
     <div class="w-full flex-col flex items-center justify-center mb-20">
         <div class="bg-white shadow w-10/12 sm:w-11/12 lg:w-9/12 rounded-xl lg:mt-24 mt-12">

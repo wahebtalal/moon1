@@ -1,7 +1,8 @@
 <x-layout.base>
     <x-header/>
-    {{$slot}}
 
+
+    {{$slot}}
 
 <x-footer/>
 </x-layout.base>
