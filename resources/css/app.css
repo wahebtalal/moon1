@@ -45,7 +45,7 @@ body {
     background-color: #0036b4;
 }
 .bg-dark-header {
-    background-color: #0036b4;
+    background: linear-gradient(to bottom, rgba(0, 54, 180, 0.1), #262262);
 }
 .border-gray {
     border: 1px solid #ebebeb;
