@@ -3,15 +3,15 @@
         <nav class="lg:hidden relative z-40">
             <div class="flex py-6 justify-between items-center px-4">
                 <div>
-                    <img class="w-24" src="/storage/assets/logo.png" alt="" />
+                    <img class=" " src="/storage/assets/logo2.png" alt="" />
                 </div>
 
             </div>
         </nav>
         <nav class="container mx-auto hidden relative z-10 w-full lg:flex justify-between items-center pt-20">
-            <div class="w-1/6">
+            <div class=" ">
                 <a href="#">
-                    <img class="" src="/storage/assets/logo.png" />
+                    <img class="" src="/storage/assets/logo2.png" />
                 </a>
             </div>
         </nav>
