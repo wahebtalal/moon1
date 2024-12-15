@@ -219,6 +219,14 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2024-12-05 21:55:24',
                 'updated_at' => '2024-12-05 21:55:24',
             ),
+            25 => 
+            array (
+                'id' => 26,
+                'key' => 'social',
+                'value' => '[{"name":"social.facebook","url":"https:\\/\\/www.facebook.com"},{"name":"social.instagram","url":"https:\\/\\/instagram.com\\/"},{"name":"social.x","url":"https:\\/\\/twitter.com\\/"},{"name":"social.tiktok","url":"https:\\/\\/tiktok.com\\/"},{"name":"social.whatsapp","url":"https:\\/\\/wa.me\\/"},{"name":"social.pinterest","url":"https:\\/\\/pinterest.com\\/"},{"name":"social.linkedin","url":"https:\\/\\/linkedin.com\\/"},{"name":"social.messenger","url":"https:\\/\\/messenger.com\\/"},{"name":"social.telegram","url":"https:\\/\\/t.me\\/"},{"name":"social.wechat","url":"https:\\/\\/wechat.com\\/"},{"name":"social.skype","url":"https:\\/\\/skype.com\\/"},{"name":"social.gmail","url":"https:\\/\\/mail.google.com\\/"},{"name":"social.youtube","url":"https:\\/\\/youtube.com\\/"}]',
+                'created_at' => '2024-12-15 20:47:23',
+                'updated_at' => '2024-12-15 20:50:41',
+            ),
         ));
         
         

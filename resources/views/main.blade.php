@@ -68,7 +68,7 @@
 
 
 
-
+<x-social-media/>
 
 
      <x-footer/>

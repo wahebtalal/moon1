@@ -6,10 +6,12 @@ use Closure;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Set;
 use Outerweb\FilamentSettings\Filament\Pages\Settings as BaseSettings;
 
 class Settings extends BaseSettings
@@ -135,6 +137,62 @@ protected static ?string $slug='/';
                                         ->required(),
                                     FileUpload::make('icon')
                                         ->label('الايقونة'),
+
+
+                                ]),
+
+
+                        ]),
+                    Tabs\Tab::make('social')
+                        ->label('التواصل الاجتماعي')
+                        ->schema([
+                            Repeater::make('social')
+                                ->label('التواصل الاجتماعي')
+
+                                ->schema([
+                                Select::make('name')
+                                    ->label('المنصة')
+
+                                    ->options([
+                                        'social.facebook' => 'فيسبوك',
+                                        'social.instagram' => 'إنستغرام',
+                                        'social.x' => 'تويتر',
+                                        'social.tiktok' => 'تيك توك',
+                                        'social.whatsapp' => 'واتساب',
+                                        'social.pinterest' => 'بينتيريست',
+                                        'social.linkedin' => 'لينكدإن',
+                                        'social.messenger' => 'ماسنجر',
+                                        'social.telegram' => 'تليغرام',
+                                        'social.wechat' => 'وي شات',
+                                        'social.skype' => 'سكايب',
+                                        'social.gmail' => 'جيميل',
+                                        'social.youtube' => 'يوتيوب',
+                                    ])
+                                    ->live() // Makes the field reactive
+                                    ->afterStateUpdated(fn ($state, Set $set) => $set(
+                                        'url',
+                                        match ($state) {
+                                            'social.facebook' => 'https://facebook.com/',
+                                            'social.instagram' => 'https://instagram.com/',
+                                            'social.x' => 'https://twitter.com/',
+                                            'social.tiktok' => 'https://tiktok.com/',
+                                            'social.whatsapp' => 'https://wa.me/',
+                                            'social.pinterest' => 'https://pinterest.com/',
+                                            'social.linkedin' => 'https://linkedin.com/',
+                                            'social.messenger' => 'https://messenger.com/',
+                                            'social.telegram' => 'https://t.me/',
+                                            'social.wechat' => 'https://wechat.com/',
+                                            'social.skype' => 'https://skype.com/',
+                                            'social.gmail' => 'https://mail.google.com/',
+                                            'social.youtube' => 'https://youtube.com/',
+                                            default => ''
+                                        }
+                                    )),
+                                    TextInput::make('url')->url()
+                                        ->placeholder('سيتم تعبئة برابط تجريبي تلقائيًا بناءً على المنصة')
+
+                                ->label('الرابط'),
+
 
 
                                 ]),
