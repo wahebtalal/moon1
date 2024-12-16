@@ -71,7 +71,7 @@
 <x-social-media/>
 
 
-     <x-footer/>
+{{--     <x-footer/>--}}
 {{--        <script src="/js/script.js"></script>--}}
     </body>
 </html>
