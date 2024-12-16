@@ -39,9 +39,9 @@ class SettingsTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'key' => 'header.rightHero',
-                'value' => '"01JF5SSCCB4WHKFHBPQB0WX4E1.png"',
+                'value' => '"01JF8KE24HWACT3Z5AJ8CSH0JS.png"',
                 'created_at' => '2024-12-05 15:44:49',
-                'updated_at' => '2024-12-15 18:37:46',
+                'updated_at' => '2024-12-16 20:44:26',
             ),
             3 => 
             array (

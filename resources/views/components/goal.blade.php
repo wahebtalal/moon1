@@ -1,7 +1,7 @@
 <section class="px-6 xl:px-0">
     <div class="   mx-auto container">
         <div class="flex flex-col items-center justify-center w-full py-10">
-            <h1 class="font-semibold custom-gray-800 text-40px">اهدافنا</h1>
+            <h1 class="font-semibold  bg-gold py-2 px-8 rounded-full text-blue-800  text-40px">اهدافنا</h1>
 {{--            <p class="mt-2.5 lg:w-2/5 lg:text-center text-2xl custom-gray-800">More than 1000 users are satisfied with our services and want to share their experience with you</p>--}}
         </div>
         <div class=" flex items-center justify-center w-full">
