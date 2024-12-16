@@ -73,5 +73,6 @@
 
 {{--     <x-footer/>--}}
 {{--        <script src="/js/script.js"></script>--}}
+    <div class="py-20"/>
     </body>
 </html>
