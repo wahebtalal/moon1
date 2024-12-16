@@ -16,13 +16,20 @@
                         </div>
                     </div>
                 @else
-                    <div class=" ">
-                        <div class="bg-white flex justify-center items-center flex-col border-gray rounded-md p-8">
-                            <img class="mb-4" src="/storage/{{$item['icon']}}" />
-                            <h2 class="text-2xl font-bold mb-6 clr-dark-blue text-center lg:text-left">{{$item['title']}}</h2>
-                            <p class="lg:w-2/3 mb-6 text-center">{{$item['description']}}</p>
+                    <div class="flex justify-center h-full my-10">
+                        <div class="bg-[#262262] flex bg-opacity-95 shadow-none transition-all duration-200 cursor-pointer hover:shadow-lg hover:scale-[1.009] hover:shadow-gray-400 rounded-3xl justify-center items-center flex-col border-gray  p-8 w-full max-w-md lg:max-w-lg">
+                            <div class=" flex items-center justify-center aspect-square  p-2  ">
+                                <img class="object-scale-down  h-[114px] w-[114px] " src="/storage/{{$item['icon']}}" alt="Icon" />
+                            </div>
+                            <h2 class="text-2xl font-bold text-yellow-500 mb-6 text-center break-words  py-8">
+                                {{$item['title']}}
+                            </h2>
+                            <p class="w-full text-white text-center mb-6 break-words leading-relaxed ">
+                                {{$item['description']}}
+                            </p>
                         </div>
                     </div>
+
                 @endif
             @endforeach
 
