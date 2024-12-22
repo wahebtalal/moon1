@@ -54,6 +54,7 @@ protected static ?string $slug='/';
 
                             Textarea::make('header.paragraph')
                                 ->label('الباراغراف')
+                                ->autosize()
                                 ->required(),
 
                         ]),
@@ -69,6 +70,7 @@ protected static ?string $slug='/';
                                         ->required(),
                                     Textarea::make('description')
                                         ->label('الوصف')
+                                        ->autosize()
                                         ->required(),
                                     FileUpload::make('icon')
                                         ->label('ايقونة الخدمة')
@@ -87,6 +89,7 @@ protected static ?string $slug='/';
                         ->schema([
                             Textarea::make('message')
                                 ->label('رسالتنا')
+                                ->autosize()
                                 ->required(),
 
 
@@ -96,6 +99,7 @@ protected static ?string $slug='/';
                         ->label('من نحن')
                         ->schema([
                             Textarea::make('aboutus')
+                                ->autosize()
                                 ->label('من نحن')
                                 ->required(),
 
@@ -115,6 +119,7 @@ protected static ?string $slug='/';
                                         ->required(),
                                     Textarea::make('description')
                                         ->label('وصف قصير')
+                                        ->autosize()
                                         ->required(),
                                     FileUpload::make('icon')
                                         ->label('ايقونة او شعار العميل ')
