@@ -1,4 +1,4 @@
-<div class="fixed bottom-10 right-10 z-50 gap-1 flex-col flex">
+<div class="fixed bottom-10 left-10 z-50 gap-1 flex-col flex">
     @foreach(setting('social') as $item)
         @if($item['name']==='social.whatsapp')
 
