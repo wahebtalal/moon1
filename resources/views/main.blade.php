@@ -74,5 +74,6 @@
 {{--     <x-footer/>--}}
 {{--        <script src="/js/script.js"></script>--}}
     <div class="lg:py-20 py-10"/>
+    <x-fixed.index/>
     </body>
 </html>

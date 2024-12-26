@@ -5,6 +5,7 @@ namespace App\Filament\Pages\Settings;
 use Closure;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Tabs;
@@ -12,6 +13,7 @@ use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Set;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 use Outerweb\FilamentSettings\Filament\Pages\Settings as BaseSettings;
 
 class Settings extends BaseSettings
@@ -42,35 +44,36 @@ protected static ?string $slug='/';
                     Tabs\Tab::make('header')
                         ->label('التروسية')
                         ->schema([
-                            TextInput::make('header.title')
+                            TinyEditor::make('header.title')
                                 ->label('العنوان')
                                 ->required(),
-                            TextInput::make('header.preTitle')
+                            TinyEditor::make('header.preTitle')
                                 ->label('نص فوق العنوان')
                                 ->required(),
                             FileUpload::make('header.rightHero')
                                 ->label('صورة العنوان اليمنى')
                                 ->required(),
 
-                            Textarea::make('header.paragraph')
+                            TinyEditor::make('header.paragraph')
                                 ->label('الباراغراف')
-                                ->autosize()
+//                                ->autosize()
                                 ->required(),
 
                         ]),
                     Tabs\Tab::make('service')
                         ->label('خدماتنا')
                         ->schema([
+                            TinyEditor::make('service_name')->label('عنوان القسم'),
                             Repeater::make('service')
                                 ->label('خدماتنا')
 
                                 ->schema([
-                                    TextInput::make('title')
+                                    TinyEditor::make('title')
                                         ->label('العنوان')
                                         ->required(),
-                                    Textarea::make('description')
+                                    TinyEditor::make('description')
                                         ->label('الوصف')
-                                        ->autosize()
+//                                        ->autosize()
                                         ->required(),
                                     FileUpload::make('icon')
                                         ->label('ايقونة الخدمة')
@@ -87,9 +90,11 @@ protected static ?string $slug='/';
                     Tabs\Tab::make('message')
                         ->label('رسالتنا')
                         ->schema([
-                            Textarea::make('message')
+                            TinyEditor::make('message_name')->label('عنوان القسم'),
+
+                            TinyEditor::make('message')
                                 ->label('رسالتنا')
-                                ->autosize()
+//                                ->autosize()
                                 ->required(),
 
 
@@ -98,8 +103,10 @@ protected static ?string $slug='/';
                     Tabs\Tab::make('aboutUs')
                         ->label('من نحن')
                         ->schema([
-                            Textarea::make('aboutus')
-                                ->autosize()
+                            TinyEditor::make('aboutus_name')->label('عنوان القسم'),
+
+                            TinyEditor::make('aboutus')
+//                                ->autosize()
                                 ->label('من نحن')
                                 ->required(),
 
@@ -110,16 +117,18 @@ protected static ?string $slug='/';
                     Tabs\Tab::make('customer')
                         ->label('عملاءنا')
                         ->schema([
+                            TinyEditor::make('customer_name')->label('عنوان القسم'),
+
                             Repeater::make('customer')
                                 ->label('عملاءنا')
 
                                 ->schema([
-                                    TextInput::make('title')
+                                    TinyEditor::make('title')
                                         ->label('اسم العميل')
                                         ->required(),
-                                    Textarea::make('description')
+                                    TinyEditor::make('description')
                                         ->label('وصف قصير')
-                                        ->autosize()
+//                                        ->autosize()
                                         ->required(),
                                     FileUpload::make('icon')
                                         ->label('ايقونة او شعار العميل ')
@@ -133,11 +142,13 @@ protected static ?string $slug='/';
                     Tabs\Tab::make('goal')
                         ->label('اهدافنا')
                         ->schema([
+                            TinyEditor::make('goal_name')->label('عنوان القسم'),
+
                             Repeater::make('goal')
                                 ->label('اهدافنا')
 
                                 ->schema([
-                                    TextInput::make('goal')
+                                    TinyEditor::make('goal')
                                         ->label('الهدف')
                                         ->required(),
                                     FileUpload::make('icon')
@@ -151,6 +162,8 @@ protected static ?string $slug='/';
                     Tabs\Tab::make('social')
                         ->label('التواصل الاجتماعي')
                         ->schema([
+                            TinyEditor::make('social_name')->label('عنوان القسم'),
+
                             Repeater::make('social')
                                 ->label('التواصل الاجتماعي')
 
@@ -197,6 +210,9 @@ protected static ?string $slug='/';
                                         ->placeholder('سيتم تعبئة برابط تجريبي تلقائيًا بناءً على المنصة')
 
                                 ->label('الرابط'),
+//                                    Checkbox::make('fixed')
+//                                        ->visible(fn($get):bool=>!$get('name') == 'social.whatsapp')
+//                                        ->label('عائم')->default(false),
 
 
 
@@ -204,30 +220,30 @@ protected static ?string $slug='/';
 
 
                         ]),
-                    Tabs\Tab::make('footer')
-                        ->label('التذييل')
-                        ->schema([
-                            TextInput::make('ftitle')->label('النص تحت الشعار'),
-                            FileUpload::make('fbackground')
-                                ->required()
-                                ->label('خلفية التذييل'),
-                            Repeater::make('links')
-                                ->label('روابط التذييل')
-
-                                ->schema([
-                                    TextInput::make('url')
-                                        ->label('الرابط')
-                                        ->required(),
-                                    FileUpload::make('icon')
-                                    ->label('الايقونة'),
-
-
-
-
-                                ]),
-
-
-                        ]),
+//                    Tabs\Tab::make('footer')
+//                        ->label('التذييل')
+//                        ->schema([
+//                            TinyEditor::make('ftitle')->label('النص تحت الشعار'),
+//                            FileUpload::make('fbackground')
+//                                ->required()
+//                                ->label('خلفية التذييل'),
+//                            Repeater::make('links')
+//                                ->label('روابط التذييل')
+//
+//                                ->schema([
+//                                    TextInput::make('url')
+//                                        ->label('الرابط')
+//                                        ->required(),
+//                                    FileUpload::make('icon')
+//                                    ->label('الايقونة'),
+//
+//
+//
+//
+//                                ]),
+//
+//
+//                        ]),
                     Tabs\Tab::make('seo')
                         ->label('Seo')
                         ->schema([

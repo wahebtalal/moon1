@@ -19,7 +19,6 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Outerweb\FilamentSettings\Filament\Plugins\FilamentSettingsPlugin;
-use Z3d0X\FilamentFabricator\FilamentFabricatorPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -29,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login()
+            ->login( )
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -65,6 +64,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogo(asset('/storage/assets/logo.png'))
             ->brandLogoHeight('3rem')
         ->plugins([
+
 //                FilamentFabricatorPlugin::make(),
                 FilamentSettingsPlugin::make()
                 ->pages([

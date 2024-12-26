@@ -10,7 +10,19 @@ export default {
         './resources/**/*.blade.php',
         './resources/**/*.js',
         './resources/**/*.vue',
+        './vendor/diogogpinto/filament-auth-ui-enhancer/resources/**/*.blade.php',
+
     ],
+    safelist: [
+        // Grid column patterns
+        {
+            pattern: /grid-cols-\d+/,
+            variants: ['sm', 'md', 'lg', 'xl'],
+        },
+        // Flex item alignment
+
+    ]
+    ,
     theme: {
         extend: {
             fontFamily: {
