@@ -1,7 +1,17 @@
+@import '../../vendor/awcodes/filament-tiptap-editor/resources/css/plugin.css';
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Noto+Kufi+Arabic:wght@100..900&family=Reem+Kufi:wght@400..700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: Noor;
+    font-weight: 400;
+    src: url(../font/AGCRegular.ttf) format("truetype");
+}
+/**{*/
+/*    @apply font-noor;*/
+/*}*/
 body {
     margin: 0;
     padding: 0;

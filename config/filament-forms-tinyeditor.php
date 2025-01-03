@@ -12,20 +12,25 @@ return [
 
     'profiles' => [
 
+        'all' => [
+            'plugins' => 'advlist autoresize codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount',
+            'toolbar' => 'undo redo removeformat | formatselect fontsizeselect fontselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen',
+            'upload_directory' => null,
+        ],
         'default' => [
             'plugins' => 'advlist autoresize codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount',
-            'toolbar' => 'undo redo removeformat | formatselect fontsizeselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen',
+            'toolbar' => 'undo redo removeformat | formatselect fontsizeselect | fontselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor  | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen',
             'upload_directory' => null,
         ],
 
         'default1' => [
             'plugins' => 'autoresize directionality emoticons link wordcount   ',
-            'toolbar' => 'removeformat | fontsizeselect |bold italic | rtl ltr |  forecolor   ',
+            'toolbar' => 'removeformat |fontselect fontsizeselect |bold italic | rtl ltr |  forecolor   ',
             'upload_directory' => null,
         ],
         'simple' => [
             'plugins' => 'autoresize directionality emoticons link wordcount',
-            'toolbar' => 'removeformat | bold italic | rtl ltr | link emoticons',
+            'toolbar' => 'removeformat | fontselect| bold italic | rtl ltr | link emoticons',
             'upload_directory' => null,
         ],
 

@@ -1,0 +1,8 @@
+@import '/vendor/filament/filament/resources/css/theme.css';
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@config 'tailwind.config.js';
+@font-face {
+    font-family: Noor;
+    font-weight: 400;
+    src: url(../../../font/AGCRegular.ttf) format("truetype");
+}

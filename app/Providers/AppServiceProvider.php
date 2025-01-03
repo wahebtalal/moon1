@@ -2,10 +2,15 @@
 
 namespace App\Providers;
 
+use Filament\Forms\Components\Builder;
+use Filament\Support\Assets\Js;
+use Filament\Support\Facades\FilamentAsset;
 use Illuminate\Foundation\Vite;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\ServiceProvider;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 use Z3d0X\FilamentFabricator\Facades\FilamentFabricator;
+use Z3d0X\FilamentFabricator\Forms\Components\PageBuilder;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,9 +24,29 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap any application services.
+     * @throws \Exception
      */
     public function boot(): void
     {
+        PageBuilder::configureUsing(function (PageBuilder $builder) {
+            $builder->collapsible()    ->collapsed()->cloneable()
 
+            ; //You can use any method supported by the Builder field
+        });
+        Builder::configureUsing(function (Builder $builder) {
+            $builder->collapsible()    ->collapsed()->cloneable()
+
+            ; //You can use any method supported by the Builder field
+        });
+
+//TinyEditor::configureUsing(function (TinyEditor $editor) {
+//            $editor->profile('all');
+//});
+        FilamentFabricator::registerStyles([
+//            'https://unpkg.com/tippy.js@6/dist/tippy.css', //external url
+//            mix('css/app.css'), //laravel-mix
+            app(Vite::class)('resources/css/app.css'), //vite
+//            asset('css/app.css'), // asset from public folder
+        ]);
     }
 }

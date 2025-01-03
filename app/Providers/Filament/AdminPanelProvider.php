@@ -2,7 +2,9 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Pages\Settings\Settings;
+use App\Filament\Pages\Settings\Header;
+use App\Filament\Pages\Settings\Seo;
+
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -19,12 +21,14 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Outerweb\FilamentSettings\Filament\Plugins\FilamentSettingsPlugin;
+use Z3d0X\FilamentFabricator\FilamentFabricatorPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
+            ->viteTheme('resources/css/filament/admin/theme.css')
             ->default()
             ->id('admin')
             ->path('admin')
@@ -35,7 +39,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-//                Pages\Dashboard::class,
+                Pages\Dashboard::class,
             ])
 //            ->topNavigation()
             ->profile()
@@ -63,12 +67,14 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->brandLogo(asset('/storage/assets/logo.png'))
             ->brandLogoHeight('3rem')
+//            ->navigation(false)
         ->plugins([
 
-//                FilamentFabricatorPlugin::make(),
+                FilamentFabricatorPlugin::make(),
                 FilamentSettingsPlugin::make()
                 ->pages([
-                    Settings::class
+                    Header::class,
+                    Seo::class,
                 ])
 
             ]);
