@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Forms\Components\WahebEditor;
 use Filament\Forms\Components\Builder;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
@@ -38,15 +39,53 @@ class AppServiceProvider extends ServiceProvider
 
             ; //You can use any method supported by the Builder field
         });
+        TinyEditor::configureUsing(function (TinyEditor $editor) {
+
+        });
+        WahebEditor::configureUsing(function (WahebEditor $editor) {
+
+//            $fonts=implode(';',array_map(
+//                    function ($item){
+//                        return $item.'='.$item;
+//                    },
+//                    array_values(
+////                    array_unique(
+//                        array_merge(
+//                            array_map(function ($item){
+//                                return $item['name'];
+//                            }, setting('fonts')
+//                            )
+//                        )
+////                    )
+//                    )[0]
+//                )).';';
+            $fonts='';
+//            foreach (\App\Models\Font::all() as $font) {
+//                foreach ($font->Name as $name) {
+//                    $fonts.=$name.'='.$name.';';
+//
+//                }
+//            }
+            $editor
+//                ->fonts($fonts)
+            ->fontsUrl(url('/font/css'))
+            ->profile('default');
+        });
 
 //TinyEditor::configureUsing(function (TinyEditor $editor) {
 //            $editor->profile('all');
 //});
         FilamentFabricator::registerStyles([
-//            'https://unpkg.com/tippy.js@6/dist/tippy.css', //external url
+//            '', //external url
 //            mix('css/app.css'), //laravel-mix
             app(Vite::class)('resources/css/app.css'), //vite
 //            asset('css/app.css'), // asset from public folder
         ]);
+//        FilamentAsset::register([
+//            Js::make('waheb_tinymce', 'https://cdn.jsdelivr.net/npm/tinymce@7.6.0/tinymce.min.js'),
+////            Js::make('tiny-editor', __DIR__.'/../resources/dist/js/tiny-editor.js'),
+//            ]);
+
+
     }
 }

@@ -1,14 +1,14 @@
 @aware(['page'])
 
 <div class="flex justify-center my-10">
-    <div class="bg-[#262262] flex bg-opacity-95 shadow-none transition-all duration-200 cursor-pointer hover:shadow-lg hover:scale-[1.009] hover:shadow-gray-400 rounded-3xl justify-center items-center flex-col border-gray p-8 w-[350px]  ">
+    <div class="bg-[#262262] flex bg-opacity-95 shadow-none transition-all duration-200 cursor-pointer hover:shadow-lg hover:scale-[1.009] hover:shadow-gray-400 rounded-3xl justify-center items-center flex-col border-gray aspect-square p-8 lg:w-[350px] md:w-[300px] w-[250px]  ">
         <div class="flex items-center justify-center aspect-square p-2">
             <img class="mask mask-squircle object-scale-down h-[114px] w-[114px]" src="{{ Storage::url($icon) }}" alt="Icon" />
         </div>
         <h2 class="text-2xl font-bold text-yellow-500 mb-6 text-center break-words py-8">
             {!! $title !!}
         </h2>
-        <p class="w-full text-white text-center mb-6 break-words leading-relaxed">
+        <p class="w-full text-white text-center ">
             {!! $description !!}
         </p>
     </div>

@@ -11,6 +11,7 @@
         $blockClass = FilamentFabricator::getPageBlockFromName($blockType);
 
         if (!empty($blockClass)) {
+//        dd($page, $group);
             $blockClass::preloadRelatedData($page, $group);
         }
     }

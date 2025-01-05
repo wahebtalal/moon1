@@ -9,9 +9,11 @@ return new class extends Migration {
     {
         Schema::create('fonts', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
-            $table->string('url');
-            $table->string('css');
+            $table->string('Name')->nullable();
+            $table->longText('url')->nullable();
+            $table->string('file')->nullable();
+            $table->longText('css')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

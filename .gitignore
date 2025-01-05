@@ -21,3 +21,10 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+/public/build/assets/
+/public/js/
+/public/js/dotswan/
+/public/js/filament/
+/public/build/
+/public/css/
+

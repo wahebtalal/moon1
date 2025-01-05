@@ -57,8 +57,7 @@
 
     <body>
     <x-header/>
-    <x-filament-fabricator::page-blocks :blocks="setting('aboutus_name')" />
-
+{!! setting('page_layout') !!}
     <x-about-us/>
     <x-our-message/>
 <x-service/>

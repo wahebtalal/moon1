@@ -1,8 +1,16 @@
 @import '../../vendor/awcodes/filament-tiptap-editor/resources/css/plugin.css';
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Noto+Kufi+Arabic:wght@100..900&family=Reem+Kufi:wght@400..700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noor%3Awght%40100..1000&family=Cairo%3Awght%40100..1000&family=Tajawal%3Awght%40100..1000&family=Noto+Kufi+Arabic%3Awght%40100..1000&family=Reem+Kufi%3Awght%40100..1000&family=Andale+Mono%3Awght%40100..1000&family=Arial%3Awght%40100..1000&family=Arial+Black%3Awght%40100..1000&family=Book+Antiqua%3Awght%40100..1000&family=Comic+Sans+MS%3Awght%40100..1000&family=Courier+New%3Awght%40100..1000&family=Georgia%3Awght%40100..1000&family=Helvetica%3Awght%40100..1000&family=Impact%3Awght%40100..1000&family=Oswald%3Awght%40100..1000&family=Symbol%3Awght%40100..1000&family=Tahoma%3Awght%40100..1000&family=Terminal%3Awght%40100..1000&family=Times+New+Roman%3Awght%40100..1000&family=Trebuchet+MS%3Awght%40100..1000&family=Verdana%3Awght%40100..1000&family=Webdings%3Awght%40100..1000&family=Wingdings%3Awght%40100..1000&family=Roboto%3Awght%40100..1000&family=Open+Sans%3Awght%40100..1000&family=Montserrat%3Awght%40100..1000&family=Lato%3Awght%40100..1000&family=Poppins%3Awght%40100..1000&family=Raleway%3Awght%40100..1000&family=Ubuntu%3Awght%40100..1000&family=Merriweather%3Awght%40100..1000&family=Playfair+Display%3Awght%40100..1000&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.filament-fabricator-body{
+    @apply overflow-x-hidden;
+}
+*{
+    /*@apply text-xl;*/
+}
 
 @font-face {
     font-family: Noor;

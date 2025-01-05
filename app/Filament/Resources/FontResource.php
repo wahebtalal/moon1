@@ -4,9 +4,20 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\FontResource\Pages;
 use App\Models\Font;
+use Filament\Forms\Components\Actions\Action;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Group;
+use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteAction;
@@ -19,6 +30,7 @@ use Filament\Tables\Actions\RestoreBulkAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
+use Http;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -29,28 +41,33 @@ class FontResource extends Resource
     protected static ?string $slug = 'fonts';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
+protected static ?string $pluralModelLabel='الخطوط';
+protected static ?string $modelLabel='الخط';
     public static function form(Form $form): Form
     {
         return $form
+            ->columns(1)
             ->schema([
-                TextInput::make('Name')
-                    ->required(),
-
-                TextInput::make('url')
+                Select::make('type')->label('النوع')->options([
+                    'google' => 'جوجل',
+                    'file' => 'ملف',
+                ])->live()->columnSpanFull()->disabledOn('edit'),
+                TextInput::make('url')->url()->visible(fn($get)=> filled($get('type')) && $get('type')=='google'),
+                FileUpload::make('file')
+                    ->previewable()
+                    ->visibility('public')
+                    ->label('ملف الخط')
                     ->required()
-                    ->url(),
-
-                TextInput::make('css')
-                    ->required(),
-
-                Placeholder::make('created_at')
-                    ->label('Created Date')
-                    ->content(fn(?Font $record): string => $record?->created_at?->diffForHumans() ?? '-'),
-
-                Placeholder::make('updated_at')
-                    ->label('Last Modified Date')
-                    ->content(fn(?Font $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
+                    ->directory('fonts')->visible(fn($get)=> filled($get('type')) && $get('type')=='file'),
+                KeyValue::make('Name')
+                    ->label('الاسم')
+                    ->visibleOn('edit'),
+                Textarea::make('css')
+                    ->extraAttributes(['dir'=>'ltr'])
+                    ->label('CSS')
+                    ->visibleOn('edit')
+                    ->rows(5)
+                    ->readOnly(),
             ]);
     }
 
@@ -58,11 +75,13 @@ class FontResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('Name'),
+                TextColumn::make('Name')->label('الاسم')->listWithLineBreaks()->searchable()->sortable(),
 
-                TextColumn::make('url'),
+                TextColumn::make('url')->toggleable()->label('رابط جوجل')->visible(fn($livewire)=>($livewire->activeTab=='google')),
+                TextColumn::make('file')                    ->label('ملف الخط')->visible(fn($livewire)=>($livewire->activeTab=='file'))
+                ,
 
-                TextColumn::make('css'),
+//                TextColumn::make('css'),
             ])
             ->filters([
                 TrashedFilter::make(),

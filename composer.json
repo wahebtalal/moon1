@@ -9,6 +9,7 @@
         "php": "^8.1",
         "awcodes/filament-tiptap-editor": "^3.0",
         "davidhsianturi/blade-bootstrap-icons": "^1.5",
+        "dotswan/filament-grapesjs-v3": "^1.0",
         "filament/filament": "^3.2",
         "guava/filament-icon-picker": "^2.0",
         "laravel/framework": "^11.31",
@@ -17,9 +18,11 @@
         "mohamedsabil83/filament-forms-tinyeditor": "^2.3",
         "orangehill/iseed": "^3.0",
         "outerweb/filament-settings": "^1.2",
+        "phenx/php-font-lib": "^1.0",
         "z3d0x/filament-fabricator": "^2.4"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.14",
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.1",
         "laravel/pint": "^1.13",

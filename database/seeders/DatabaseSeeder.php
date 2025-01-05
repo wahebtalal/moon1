@@ -21,5 +21,9 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->call(SettingsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(SocialMediaTableSeeder::class);
+        $this->call(PagesTableSeeder::class);
+        $this->call(CacheTableSeeder::class);
+        $this->call(FontsTableSeeder::class);
     }
 }

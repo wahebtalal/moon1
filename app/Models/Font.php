@@ -13,5 +13,10 @@ class Font extends Model
         'Name',
         'url',
         'css',
+        'type',
+        'file'
+    ];
+    protected $casts=[
+        'Name'=>'array',
     ];
 }

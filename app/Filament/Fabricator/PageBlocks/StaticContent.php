@@ -2,6 +2,7 @@
 
 namespace App\Filament\Fabricator\PageBlocks;
 
+use App\Forms\Components\WahebEditor;
 use App\TiptapExtensions\FontExtenion;
 use Filament\Forms\Components\Builder\Block;
 use FilamentTiptapEditor\TiptapEditor;
@@ -15,7 +16,20 @@ class StaticContent extends PageBlock
         return Block::make('static-content')
             ->label('محتوى ثابت')
             ->schema([
-                TinyEditor::make('content')
+                 WahebEditor::make('content')
+
+        ->label('المحتوى')
+
+                //
+            ]);
+    }
+    public static function getWahebSchema($data): Block
+    {
+        return Block::make('static-content')
+            ->label('محتوى ثابت')
+            ->schema([
+                 WahebEditor::make('content')
+                     ->fonts($data['fonts'])
 
         ->label('المحتوى')
 

@@ -167,6 +167,8 @@ export default {
 
     plugins: [
         require('daisyui'),
+        require('tailwindcss-fluid-type'),
+
 
     ],
     daisyui: {

@@ -2,7 +2,9 @@
 
 namespace App\Filament\Pages\Settings;
 
+use App\Forms\Components\WahebEditor;
 use Closure;
+use Dotswan\FilamentGrapesjs\Fields\GrapesJs;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
@@ -31,19 +33,33 @@ protected static ?string $slug='/header';
 
     public function schema(): array|Closure
     {
+        $fonts='';
+        foreach (\App\Models\Font::all() as $font) {
+            foreach ($font->Name as $name) {
+                $fonts.=$name.'='.$name.';';
+
+            }
+        }
         return [
-            TinyEditor::make('header.title')
-                ->label('العنوان')
-            ,
-            TinyEditor::make('header.preTitle')
-                ->label('نص فوق العنوان')
+            WahebEditor::make('header.title')
+                ->template('example')
+                ->fonts($fonts)
+
+                ->label('العنوان'),
+
+             WahebEditor::make('header.preTitle')
+                 ->fonts($fonts)
+
+                 ->label('نص فوق العنوان')
             ,
             FileUpload::make('header.rightHero')
                 ->label('صورة العنوان اليمنى')
                 ->required(),
 
-            TinyEditor::make('header.paragraph')
-                ->label('الباراغراف')
+             WahebEditor::make('header.paragraph')
+                 ->fonts($fonts)
+
+                 ->label('الباراغراف')
 
 
         ];

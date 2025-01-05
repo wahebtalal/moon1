@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PageResource\Pages;
+use App\Forms\Components\PageBuilder;
 use Closure;
 use Filament\Forms\Components\Actions;
 use Filament\Forms\Components\Actions\Action as FormAction;
@@ -27,7 +28,6 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Unique;
 use Pboivin\FilamentPeek\Forms\Actions\InlinePreviewAction;
 use Z3d0X\FilamentFabricator\Facades\FilamentFabricator;
-use Z3d0X\FilamentFabricator\Forms\Components\PageBuilder;
 use Z3d0X\FilamentFabricator\Models\Contracts\Page as PageContract;
 
 class PageResource extends Resource
@@ -55,6 +55,7 @@ class PageResource extends Resource
 //                                ->builderName('content_blocks'),
 //                        ]),
                         PageBuilder::make('blocks')
+
                             ->label(__('filament-fabricator::page-resource.labels.blocks')),
 
                         Group::make()->schema(FilamentFabricator::getSchemaSlot('blocks.after')),

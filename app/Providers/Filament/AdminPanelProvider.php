@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Settings\Font;
 use App\Filament\Pages\Settings\Header;
 use App\Filament\Pages\Settings\Seo;
 
@@ -75,6 +76,7 @@ class AdminPanelProvider extends PanelProvider
                 ->pages([
                     Header::class,
                     Seo::class,
+                    Font::class
                 ])
 
             ]);

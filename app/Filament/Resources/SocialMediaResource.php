@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\SocialMediaResource\Pages;
+use App\Forms\Components\WahebEditor;
 use App\Models\SocialMedia;
 use App\Tables\Columns\IconColumn as TableIconColumn;
 use Filament\Forms\Components\Checkbox;
@@ -49,11 +50,21 @@ class SocialMediaResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $fonts='';
+        foreach (\App\Models\Font::all() as $font) {
+            foreach ($font->Name as $name) {
+                $fonts.=$name.'='.$name.';';
+
+            }
+        }
         return $form
             ->schema([
-                TextInput::make('title')
+                WahebEditor::make('title')
+
+                    ->fonts($fonts)
                     ->label('العنوان')
-                    ->required(),
+//                    ->required()
+                ,
 
                 TextInput::make('url')
                     ->label('الرابط')

@@ -13,7 +13,9 @@
         {{ \Filament\Support\Facades\FilamentView::renderHook('filament-fabricator::head.start') }}
 
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{{--        <meta name="viewport" content="width=device-width, initial-scale=1">--}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         @foreach (\Z3d0X\FilamentFabricator\Facades\FilamentFabricator::getMeta() as $tag)
@@ -24,7 +26,7 @@
             <link rel="icon" href="{{ $favicon }}">
         @endif
 
-        <title>{{ $title ? "{$title} - " : null }} {{ config('app.name') }}</title>
+        <title>{{ $title ? "{$title}  " : null }} </title>
 
 
         <style>
@@ -69,9 +71,10 @@
         <meta name="twitter:title" content="{{ $meta['twitter_title'] }}">
         <meta name="twitter:description" content="{{ $meta['twitter_description'] }}">
         <meta name="twitter:image" content="{{ $meta['twitter_image'] }}">
-        <title>Moon1 | موون1 </title>
+{{--        <title>Moon1 | موون1 </title>--}}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="{{url('/font/css')}}" rel="stylesheet" />
         {{--        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />--}}
         {{--        <link rel="stylesheet" href="/storage/css/style.css" />--}}
 {{--        @vite(['resources/js/app.js','resources/css/app.css'])--}}
