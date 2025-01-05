@@ -32,37 +32,10 @@
                     plugins: ['{{ $getPlugins() }}'],
                     external_plugins: @js($getExternalPlugins()),
                     toolbar: '{{ $getToolbar() }}',
-
-{{--theme: 'modern',--}}
-{{--  plugins: 'print preview fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern help',--}}
-{{--  toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',--}}
-{{--   font_formats: `--}}
-{{--        Noor=Noor;--}}
-{{--        Cairo=Cairo, sans-serif;--}}
-{{--        Tajawal=Tajawal, sans-serif;--}}
-{{--        Noto Kufi Arabic=Noto Kufi Arabic, sans-serif;--}}
-{{--        Reem Kufi=Reem Kufi, sans-serif;--}}
-{{--        Andale Mono=andale mono,times;--}}
-{{--        Arial=arial,helvetica,sans-serif;--}}
-{{--        Arial Black=arial black,avant garde;--}}
-{{--        Book Antiqua=book antiqua,palatino;--}}
-{{--        Comic Sans MS=comic sans ms,sans-serif;--}}
-{{--        Courier New=courier new,courier;--}}
-{{--        Georgia=georgia,palatino;--}}
-{{--        Helvetica=helvetica;--}}
-{{--        Impact=impact,chicago;--}}
-{{--        Oswald=oswald;--}}
-{{--        Symbol=symbol;--}}
-{{--        Tahoma=tahoma,arial,helvetica,sans-serif;--}}
-{{--        Terminal=terminal,monaco;--}}
-{{--        Times New Roman=times new roman,times;--}}
-{{--        Trebuchet MS=trebuchet ms,geneva;--}}
-{{--        Verdana=verdana,geneva;--}}
-{{--        Webdings=webdings;--}}
-{{--        Wingdings=wingdings,zapf dingbats;--}}
-{{--    `,--}}
-         content_style: '@import url(\'https://fonts.googleapis.com/css2?family=Noor%3Awght%40100..1000&family=Cairo%3Awght%40100..1000&family=Tajawal%3Awght%40100..1000&family=Noto+Kufi+Arabic%3Awght%40100..1000&family=Reem+Kufi%3Awght%40100..1000&family=Arial%3Awght%40100..1000&family=Arial+Black%3Awght%40100..1000&family=Book+Antiqua%3Awght%40100..1000&family=Comic+Sans+MS%3Awght%40100..1000&family=Courier+New%3Awght%40100..1000&family=Georgia%3Awght%40100..1000&family=Helvetica%3Awght%40100..1000&family=Impact%3Awght%40100..1000&family=Oswald%3Awght%40100..1000&family=Symbol%3Awght%40100..1000&family=Tahoma%3Awght%40100..1000&family=Terminal%3Awght%40100..1000&family=Times+New+Roman%3Awght%40100..1000&family=Trebuchet+MS%3Awght%40100..1000&family=Verdana%3Awght%40100..1000&family=Webdings%3Awght%40100..1000&family=Wingdings%3Awght%40100..1000&family=Roboto%3Awght%40100..1000&family=Open+Sans%3Awght%40100..1000&family=Montserrat%3Awght%40100..1000&family=Lato%3Awght%40100..1000&family=Poppins%3Awght%40100..1000&family=Raleway%3Awght%40100..1000&family=Ubuntu%3Awght%40100..1000&family=Merriweather%3Awght%40100..1000&family=Playfair+Display%3Awght%40100..1000&display=swap \')',
-    toolbar_mode: 'sliding',
+                    font_formats: '{{ $getFonts() }}',
+                        font_size_input_default_unit: 'pt',
+    font_css: '{{$getFontsUrl()}}',
+                     toolbar_mode: 'sliding',
                     document_base_url: '{{ $getDocumentBaseUrl() }}',
                     relative_urls: {{ $getRelativeUrls() ? 'true' : 'false' }},
                     remove_script_host: {{ $getRemoveScriptHost() ? 'true' : 'false' }},
