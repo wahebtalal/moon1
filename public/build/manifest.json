@@ -1,27 +1,7 @@
 {
-  "node_modules/@tiptap/extension-font-family/dist/index.js": {
-    "file": "assets/index-BpKwCYjQ.js",
-    "name": "index",
-    "src": "node_modules/@tiptap/extension-font-family/dist/index.js",
-    "isEntry": true,
-    "imports": [
-      "node_modules/@tiptap/extension-text-style/dist/index.js"
-    ]
-  },
-  "node_modules/@tiptap/extension-text-style/dist/index.js": {
-    "file": "assets/index-DNby6sx8.js",
-    "name": "index",
-    "src": "node_modules/@tiptap/extension-text-style/dist/index.js",
-    "isEntry": true
-  },
   "resources/css/app.css": {
-    "file": "assets/app-CAdi6cAn.css",
+    "file": "assets/app-Dkxg78On.css",
     "src": "resources/css/app.css",
-    "isEntry": true
-  },
-  "resources/css/filament/admin/theme.css": {
-    "file": "assets/theme-CvYRnW6p.css",
-    "src": "resources/css/filament/admin/theme.css",
     "isEntry": true
   },
   "resources/font/AGCRegular.ttf": {
@@ -29,7 +9,7 @@
     "src": "resources/font/AGCRegular.ttf"
   },
   "resources/js/app.js": {
-    "file": "assets/app-z-Rg4TxU.js",
+    "file": "assets/app-Xaw6OIO1.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

@@ -3,10 +3,8 @@
 namespace App\Filament\Fabricator\PageBlocks;
 
 use App\Forms\Components\WahebEditor;
-use App\TiptapExtensions\FontExtenion;
-use Filament\Forms\Components\Builder\Block;
-use FilamentTiptapEditor\TiptapEditor;
-use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
+ use Filament\Forms\Components\Builder\Block;
+ use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 use Z3d0X\FilamentFabricator\PageBlocks\PageBlock;
 
 class StaticContent extends PageBlock

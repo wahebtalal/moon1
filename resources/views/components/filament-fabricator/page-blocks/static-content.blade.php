@@ -1,6 +1,6 @@
 <div class="w-auto">
 
-            {!! tiptap_converter()->asHTML( $content ) !!}
+            {!!   $content  !!}
 </div>
 
 
