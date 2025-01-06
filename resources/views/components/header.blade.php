@@ -17,7 +17,7 @@
         </nav>
         <div class="  pt-4 lg:flex flex-row-reverse items-center relative z-10 container mx-auto">
             <div class="w-full lg:w-1/2 h-full  lg:pr-10 xl:pr-0">
-                <img class="ml-auto    rounded-lg" src="/storage/{!! setting('header.rightHero') !!}" />
+                <img class="ml-auto    rounded-lg" src="{{Storage::url(setting('header.rightHero'))}}" />
             </div>
             <div class="w-full lg:w-1/2 h-full mt-8 lg:mt-0 px-10 py-5 [&_*]:font-noor">
                 <p class="text-white uppercase text-2xl mb-4">{!! setting('header.preTitle') !!}</p>
