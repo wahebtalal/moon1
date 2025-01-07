@@ -39,9 +39,7 @@ class AppServiceProvider extends ServiceProvider
 
             ; //You can use any method supported by the Builder field
         });
-        TinyEditor::configureUsing(function (TinyEditor $editor) {
 
-        });
         WahebEditor::configureUsing(function (WahebEditor $editor) {
 
 //            $fonts=implode(';',array_map(
@@ -69,7 +67,9 @@ class AppServiceProvider extends ServiceProvider
             $editor
 //                ->fonts($fonts)
             ->fontsUrl(url('/font/css'))
-            ->profile('default');
+                ->setCustomConfigs(['font_css'=>url('/font/css')])
+                ->toolbarSticky(false)
+            ->profile('full');
         });
 
 //TinyEditor::configureUsing(function (TinyEditor $editor) {
@@ -82,8 +82,8 @@ class AppServiceProvider extends ServiceProvider
 //            asset('css/app.css'), // asset from public folder
         ]);
 //        FilamentAsset::register([
-//            Js::make('waheb_tinymce', 'https://cdn.jsdelivr.net/npm/tinymce@7.6.0/tinymce.min.js'),
-////            Js::make('tiny-editor', __DIR__.'/../resources/dist/js/tiny-editor.js'),
+////            Js::make('waheb_tinymce', 'https://cdn.jsdelivr.net/npm/tinymce@7.6.0/tinymce.min.js'),
+//            Js::make('waheb-editor', __DIR__.'/../../resources/js/tiny.js'),
 //            ]);
 
 

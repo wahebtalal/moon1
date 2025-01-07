@@ -2,8 +2,10 @@
 
 namespace App\Filament\Pages\Settings;
 
+//use App\Forms\Components\WahebEditor;
 use App\Forms\Components\WahebEditor;
 use Closure;
+//use Daothanh\Tinymce\Forms\Components\TinymceField;
 use Dotswan\FilamentGrapesjs\Fields\GrapesJs;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
@@ -12,8 +14,9 @@ use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Set;
-use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
+//use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 use Outerweb\FilamentSettings\Filament\Pages\Settings as BaseSettings;
+use AmidEsfahani\FilamentTinyEditor\TinyEditor;
 
 class Header extends BaseSettings
 {
@@ -41,8 +44,9 @@ protected static ?string $slug='/header';
             }
         }
         return [
+
             WahebEditor::make('header.title')
-                ->template('example')
+//                ->template('example')
                 ->fonts($fonts)
 
                 ->label('العنوان'),
@@ -60,7 +64,7 @@ protected static ?string $slug='/header';
                  ->fonts($fonts)
 
                  ->label('الباراغراف')
-
+//
 
         ];
     }

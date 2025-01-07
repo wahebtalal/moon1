@@ -83,8 +83,7 @@
 
     <body class="filament-fabricator-body">
         {{ \Filament\Support\Facades\FilamentView::renderHook('filament-fabricator::body.start') }}
-
-        {{ $slot }}
+  {{ $slot }}
 
         {{ \Filament\Support\Facades\FilamentView::renderHook('filament-fabricator::scripts.start') }}
 

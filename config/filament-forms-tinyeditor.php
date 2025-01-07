@@ -49,12 +49,12 @@ return [
 //            'upload_directory' => null,
 //        ],
         'default' => [
-            'plugins' => '  advlist autoresize codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount visualchars visualblocks codesample',
-            'toolbar' => 'accordion undo redo removeformat | formatselect fontsizeselect | fontsizeinput| fontselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | lineheight| numlist bullist | forecolor  | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen',
+            'plugins' => '  advlist autoresize codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount visualchars visualblocks codesample advcode advlist advtable anchor autocorrect autolink autosave casechange charmap checklist codesample directionality editimage emoticons export footnotes formatpainter help image insertdatetime link linkchecker lists media mediaembed mergetags nonbreaking pagebreak permanentpen powerpaste searchreplace table tableofcontents tinymcespellchecker typography visualblocks visualchars wordcount',
+            'toolbar' => 'accordion undo redo removeformat | formatselect  | fontsizeinput | fontselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | lineheight| numlist bullist | forecolor  | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen',
             'upload_directory' => null,
             'custom_configs' => [
-                'fontsize_formats' => '8px 10px 11px 12px 13px 14px 15px 16px 17px 18px 19px 20px 21px 22px 23px 24px 25px 26px 27px 28px 29px 30px 32px 34px 36px 38px 40px 42px 44px 46px 48px 50px 52px 54px 56px 58px 60px 62px 64px 66px 68px 70px 72px 74px 76px 78px 80px 82px 84px 86px 88px 90px 92px 94px 96px 98px 100px',
-                'font_size_input_default_unit'=> "pt"
+                'fontsize_formats' => '8vmin 10vmin 11vmin 12vmin 13vmin 14vmin 15vmin 16vmin 17vmin 18vmin 19vmin 20vmin 21vmin 22vmin 23vmin 24vmin 25vmin 26vmin 27vmin 28vmin 29vmin 30vmin 32vmin 34vmin 36vmin 38vmin 40vmin 42vmin 44vmin 46vmin 48vmin 50vmin 52vmin 54vmin 56vmin 58vmin 60vmin 62vmin 64vmin 66vmin 68vmin 70vmin 72vmin 74vmin 76vmin 78vmin 80vmin 82vmin 84vmin 86vmin 88vmin 90vmin 92vmin 94vmin 96vmin 98vmin 100vmin',
+                'font_size_input_default_unit'=> "vmin"
 
 //                'content_style' => '@import url(\'https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Noto+Kufi+Arabic:wght@100..900&family=Reem+Kufi:wght@400..700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap\')',
 //                'content_style' => '@import url(\''.url('/font/css').'\')',

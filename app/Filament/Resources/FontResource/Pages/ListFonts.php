@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\FontResource\Pages;
 
 use App\Filament\Resources\FontResource;
+use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Resources\Components\Tab;
@@ -16,6 +17,7 @@ class ListFonts extends ListRecords
     {
         return [
             CreateAction::make(),
+
         ];
     }
 

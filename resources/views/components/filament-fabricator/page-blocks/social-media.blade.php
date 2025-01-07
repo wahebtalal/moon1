@@ -16,7 +16,7 @@
                     @foreach($social as $item)
                         {{--                        <div class="w-12 h-12">--}}
                         <button style="background-color:{{ hexToRgba($item->color, 0.05)}}; "
-                                class="  p-5 cursor-pointer  aspect-square h-28 rounded-md overflow-hidden shadow-md shadow-transparent transition-all duration-300 hover:shadow-indigo-200"
+                                class="  p-5 cursor-pointer grid items-center aspect-square h-28 rounded-md overflow-hidden shadow-md shadow-transparent transition-all duration-300 hover:shadow-indigo-200"
                                 onclick="window.open('{{ $item->url }}', '_blank')">
 
                             <x-icon name="{{ $item->icon }}"

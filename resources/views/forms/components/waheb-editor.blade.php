@@ -7,7 +7,7 @@
     <div
         x-data="{ state: $wire.entangle('{{ $getStatePath() }}'), initialized: false }"
         x-load-js="[@js(\Filament\Support\Facades\FilamentAsset::getScriptSrc($getLanguageId(), 'mohamedsabil83/filament-forms-tinyeditor'))]"
-        x-init="(() => {
+         x-init="(() => {
             $nextTick(() => {
                 tinymce.createEditor('tiny-editor-{{ $getId() }}', {
                     target: $refs.tinymce,
@@ -31,7 +31,8 @@
                     menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
                     plugins: ['{{ $getPlugins() }}'],
                     external_plugins: @js($getExternalPlugins()),
-                    toolbar: '{{ $getToolbar() }}',
+{{--                    toolbar: '{{ $getToolbar() }}',--}}
+                    toolbar: 'undo redo spellcheckdialog  | blocks fontfamily fontsizeinput | bold italic underline forecolor backcolor | link image | align lineheight checklist bullist numlist | indent outdent | removeformat typography',
                     font_formats: '{{ $getFonts() }}',
                         font_size_input_default_unit: 'pt',
     font_css: '{{$getFontsUrl()}}',
