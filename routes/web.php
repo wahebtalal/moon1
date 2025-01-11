@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OptimizationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/sss', function () {
@@ -20,3 +21,7 @@ Route::get('/font/css', function() {
     $response->header('Content-Type', 'text/css');
     return $response;
 });
+
+Route::get('/run-optimize', [OptimizationController::class, 'runOptimize']);
+
+Route::get('/run-optimize-clear', [OptimizationController::class, 'runOptimizeClear']);

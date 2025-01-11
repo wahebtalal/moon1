@@ -16,6 +16,7 @@ use Z3d0X\FilamentFabricator\PageBlocks\PageBlock;
 
 class PageSectionBlock extends PageBlock
 {
+    public static string $fonts = '';
     public static function getBlockSchema(): Block
     {
         return Block::make('page-section')
@@ -161,13 +162,29 @@ class PageSectionBlock extends PageBlock
 
                     ->label('محتوى القسم')
                     ->blocks(fn () => array_filter(
-                        FilamentFabricator::getPageBlocks(),
+                        $this->getPageBlocks(),
                         fn ($key) => $key !== 'page-section',
                         ARRAY_FILTER_USE_KEY
                     )),
             ]);
     }
+    public static function getWahebSchema($data): Block
+    {
+static::$fonts=$data['fonts'];
+return static::getBlockSchema();
 
+    }
+    public function getPageBlocks(): array
+    {
+//        $fonts='';
+//        foreach (\App\Models\Font::all() as $font) {
+//            foreach ($font->Name as $name) {
+//                $fonts.=$name.'='.$name.';';
+//
+//            }
+//        }
+        return collect( FilamentFabricator::getPageBlocksRaw())->map(fn ($block) => method_exists($block, 'getWahebSchema') ? $block::getWahebSchema(['fonts'=>static::$fonts]) : $block::getBlockSchema())->toArray();
+    }
     public static function mutateData(array $data): array
     {
         // Mutate or preprocess data before saving

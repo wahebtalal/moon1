@@ -96,7 +96,15 @@
         @endforeach
 
         @stack('scripts')
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7F2GSZ9DW8"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
+            gtag('config', 'G-7F2GSZ9DW8');
+        </script>
         {{ \Filament\Support\Facades\FilamentView::renderHook('filament-fabricator::scripts.end') }}
 
         {{ \Filament\Support\Facades\FilamentView::renderHook('filament-fabricator::body.end') }}

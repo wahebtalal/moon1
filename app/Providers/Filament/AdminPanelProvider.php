@@ -5,6 +5,9 @@ namespace App\Providers\Filament;
 use App\Filament\Pages\Settings\Font;
 use App\Filament\Pages\Settings\Header;
 use App\Filament\Pages\Settings\Seo;
+use App\Filament\Plugins\FilamentArtisanPlugin;
+use App\Filament\Plugins\FilamentBrowserPlugin;
+use BezhanSalleh\FilamentGoogleAnalytics\Widgets as GoogleAnalyticsWidgets;
 
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -14,6 +17,7 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Widgets;
+use GeoSot\FilamentEnvEditor\FilamentEnvEditorPlugin;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -47,6 +51,17 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
 //                Widgets\FilamentInfoWidget::class,
+                GoogleAnalyticsWidgets\PageViewsWidget::class,
+                GoogleAnalyticsWidgets\VisitorsWidget::class,
+                GoogleAnalyticsWidgets\ActiveUsersOneDayWidget::class,
+                GoogleAnalyticsWidgets\ActiveUsersSevenDayWidget::class,
+                GoogleAnalyticsWidgets\ActiveUsersTwentyEightDayWidget::class,
+                GoogleAnalyticsWidgets\SessionsWidget::class,
+                GoogleAnalyticsWidgets\SessionsDurationWidget::class,
+                GoogleAnalyticsWidgets\SessionsByCountryWidget::class,
+                GoogleAnalyticsWidgets\SessionsByDeviceWidget::class,
+                GoogleAnalyticsWidgets\MostVisitedPagesWidget::class,
+                GoogleAnalyticsWidgets\TopReferrersListWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -69,6 +84,15 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogoHeight('3rem')
 //            ->navigation(false)
         ->plugins([
+                \BezhanSalleh\FilamentGoogleAnalytics\FilamentGoogleAnalyticsPlugin::make()
+
+,
+             FilamentArtisanPlugin::make(),
+                FilamentEnvEditorPlugin::make()
+                ->navigationGroup('المطور')
+,
+                \FilipFonal\FilamentLogManager\FilamentLogManager::make(),
+
 
                 FilamentFabricatorPlugin::make(),
                 FilamentSettingsPlugin::make()
@@ -76,7 +100,27 @@ class AdminPanelProvider extends PanelProvider
                     Header::class,
                     Seo::class,
                     Font::class
-                ])
+                ]),
+                FilamentBrowserPlugin::make()
+                    ->hiddenFolders([
+                        base_path('app')
+                    ])
+                    ->hiddenFiles([
+//                        base_path('.env')
+                    ])
+                    ->hiddenExtantions([
+//                        "php"
+                    ])
+                    ->allowCreateFolder()
+                    ->allowEditFile()
+                    ->allowCreateNewFile()
+                    ->allowCreateFolder()
+                    ->allowRenameFile()
+                    ->allowDeleteFile()
+                    ->allowMarkdown()
+                    ->allowCode()
+                    ->allowPreview()
+                    ->basePath(base_path())
 
             ]);
     }
