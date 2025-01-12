@@ -1,7 +1,7 @@
 @php use App\Models\SocialMedia; @endphp
 @aware(['page'])
 @php
-    $social=SocialMedia::all();
+    $social=SocialMedia::where('show',true)->get();
 
 @endphp
 <div class="px-4 py-4 md:py-8">

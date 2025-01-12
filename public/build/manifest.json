@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-Gh_NZ-Hi.css",
+    "file": "assets/app-D7WLq4P6.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -13,14 +13,5 @@
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
-  },
-  "resources/js/tiny.js": {
-    "file": "assets/tiny-BqWhNU9Y.js",
-    "name": "tiny",
-    "src": "resources/js/tiny.js",
-    "isEntry": true,
-    "css": [
-      "assets/tiny-DZi_hbPa.css"
-    ]
   }
 }

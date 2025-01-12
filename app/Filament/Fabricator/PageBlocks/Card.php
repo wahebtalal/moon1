@@ -4,6 +4,7 @@ namespace App\Filament\Fabricator\PageBlocks;
 
 use App\Forms\Components\WahebEditor;
 use Filament\Forms\Components\Builder\Block;
+use Filament\Forms\Components\TextInput;
 use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 use Z3d0X\FilamentFabricator\PageBlocks\PageBlock;
 
@@ -15,9 +16,12 @@ class Card extends PageBlock
     public static function getBlockSchema(): Block
     {
         return Block::make('card')
-            ->label('كارد خدماتنا')
+            ->label(function ($state) {
+                return $state['lab'] ?? 'كارد خدماتنا';
+            })
+
             ->schema([
-                // Add fields to manage the content dynamically
+                TextInput::make('lab')->lazy()->label('عنوان داخلي '),
                 \Filament\Forms\Components\FileUpload::make('icon')
                     ->label('أيقونة')
                     ->disk('public')

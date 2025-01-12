@@ -89,6 +89,8 @@ class SocialMediaResource extends Resource
                     ->label('اللون')
                     ->required(),
 
+                Checkbox::make('show')
+                    ->label('مرئي بقسم الصفحة'),
                 Checkbox::make('floating')
                     ->label('عائم'),
 

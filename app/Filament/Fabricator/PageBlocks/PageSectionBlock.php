@@ -16,12 +16,19 @@ use Z3d0X\FilamentFabricator\PageBlocks\PageBlock;
 
 class PageSectionBlock extends PageBlock
 {
+
     public static string $fonts = '';
+
+
     public static function getBlockSchema(): Block
     {
         return Block::make('page-section')
-            ->label('قسم')
+            ->label(function ($state) {
+                return $state['lab'] ?? 'قسم';
+            })
+
             ->schema([
+                TextInput::make('lab')->lazy()->label('عنوان داخلي '),
                 // Select layout type: Grid or Flex
                 Select::make('layout')
                     ->label('نوع التخطيط')
@@ -162,7 +169,7 @@ class PageSectionBlock extends PageBlock
 
                     ->label('محتوى القسم')
                     ->blocks(fn () => array_filter(
-                        $this->getPageBlocks(),
+                        collect( FilamentFabricator::getPageBlocksRaw())->map(fn ($block) => method_exists($block, 'getWahebSchema') ? $block::getWahebSchema(['fonts'=>static::$fonts]) : $block::getBlockSchema())->toArray(),
                         fn ($key) => $key !== 'page-section',
                         ARRAY_FILTER_USE_KEY
                     )),
@@ -174,7 +181,7 @@ static::$fonts=$data['fonts'];
 return static::getBlockSchema();
 
     }
-    public function getPageBlocks(): array
+    public static function getPageBlocks(): array
     {
 //        $fonts='';
 //        foreach (\App\Models\Font::all() as $font) {

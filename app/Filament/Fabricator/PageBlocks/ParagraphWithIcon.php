@@ -5,7 +5,7 @@ namespace App\Filament\Fabricator\PageBlocks;
 use App\Forms\Components\WahebEditor;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\FileUpload;
-use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
+use Filament\Forms\Components\TextInput;
 use Z3d0X\FilamentFabricator\PageBlocks\PageBlock;
 
 class ParagraphWithIcon extends PageBlock
@@ -13,9 +13,13 @@ class ParagraphWithIcon extends PageBlock
     public static function getBlockSchema(): Block
     {
         return Block::make('paragraph-with-icon')
-            ->label('باراجراف مع ايقونه يمنى')
+
+            ->label(function ($state) {
+                return $state['lab'] ?? 'باراجراف مع ايقونه يمنى';
+            })
 
             ->schema([
+                TextInput::make('lab')->lazy()->label('عنوان داخلي '),
                 FileUpload::make('icon')
                     ->label('ايقونة  ')
                     ->required(),

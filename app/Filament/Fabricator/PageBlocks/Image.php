@@ -16,9 +16,12 @@ class Image extends PageBlock
     public static function getBlockSchema(): Block
     {
         return Block::make('image')
-            ->label('صورة')
-//            ->columns(2)
+            ->label(function ($state) {
+                return $state['lab'] ?? 'صورة';
+            })
+
             ->schema([
+                TextInput::make('lab')->lazy()->label('عنوان داخلي '),
                 // Tab Group
                 Tabs::make('Image Options')
                     ->tabs([

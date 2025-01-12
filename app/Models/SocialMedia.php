@@ -15,12 +15,14 @@ class SocialMedia extends Model
         'icon',
         'color',
         'floating',
+        'show'
     ];
 
     protected function casts(): array
     {
         return [
             'floating' => 'boolean',
+            'show' => 'boolean',
         ];
     }
 }
