@@ -146,6 +146,74 @@ class CardImage extends PageBlock
                     ->default('none'),
             ]);
     }
+    public static function getWahebSchema($data): Block
+    {
+        return Block::make('card-image')
+//            ->label('كارت مع صورة')
+            ->label(function ($state) {
+                return $state['lab'] ?? 'كارت مع صورة';
+            })
+
+            ->schema([
+                TextInput::make('lab')->lazy()->label('عنوان داخلي '),
+                FileUpload::make('icon')
+                    ->label('ايقونة او شعار العميل')
+                    ->required()
+                    ->downloadable()
+                    ->image()
+                    ->imageEditor(),
+
+                WahebEditor::make('title')
+                    ->label('اسم العميل')
+                    ->fonts($data['fonts'])
+                    ->required(),
+
+                WahebEditor::make('description')
+                    ->label('وصف قصير')
+                    ->fonts($data['fonts'])
+                    ->required(),
+
+                TextInput::make('url')
+                    ->label('الرابط')
+                    ->url()
+                    ->nullable(),
+
+                // Card background color
+                ColorPicker::make('cardbackgroundcolor')
+                    ->label('لون خلفية الكارت')
+                    ->default('#ffffff'),
+
+                // Card border settings
+                TextInput::make('cardborderradius')
+                    ->label('نصف قطر حواف الكارت (بالبكسل)')
+                    ->numeric()
+                    ->default(8),
+
+                ColorPicker::make('cardbordercolor')
+                    ->label('لون حواف الكارت')
+                    ->default('#cccccc'),
+
+                // Image styling options
+                TextInput::make('imagewidth')
+                    ->label('عرض الصورة (بالبكسل)')
+                    ->numeric()
+                    ->nullable(),
+
+                TextInput::make('imageheight')
+                    ->label('ارتفاع الصورة (بالبكسل)')
+                    ->numeric()
+                    ->nullable(),
+
+                Select::make('imagehovereffect')
+                    ->label('تأثير عند مرور الماوس على الصورة')
+                    ->options([
+                        'none' => 'بدون تأثير',
+                        'zoom' => 'تكبير (Zoom)',
+                        'shadow' => 'ظل (Shadow)',
+                    ])
+                    ->default('none'),
+            ]);
+    }
 
     public static function mutateData(array $data): array
     {
