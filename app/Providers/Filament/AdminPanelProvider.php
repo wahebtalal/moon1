@@ -103,7 +103,7 @@ class AdminPanelProvider extends PanelProvider
                 ]),
                 FilamentBrowserPlugin::make()
                     ->hiddenFolders([
-                        base_path('app')
+//                        base_path('app')
                     ])
                     ->hiddenFiles([
 //                        base_path('.env')
